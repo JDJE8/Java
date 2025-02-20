@@ -1,0 +1,36 @@
+import java.util.*;
+class Volume{
+    int R,H,Cylinder,Sphere,Cone;
+    float pi=3.14f;
+    Scanner sc=new Scanner(System.in);
+    void Volume(){
+       System.out.println("Enter radius of cylinder ");
+       int R=sc.nextInt();
+       System.out.println("Enter height of cylinder ");
+       int H=sc.nextInt();
+       float vol=(float)pi*R*R*H;
+        System.out.println("Volume of cylinder is "+vol);
+    }
+    void Volume(int R){
+        float vol=(float)1.33*pi*R*R*R;
+        System.out.println("Volume of Sphere is "+vol);
+    }
+    void Volume(int R,int H){
+        float vol=(float)0.33*pi*R*R*H;
+        System.out.println("Volume of Cone is "+vol);
+    }
+}
+public class Method_Over {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        Volume V =new Volume();
+        System.out.println("Enter radius of Sphere ");
+        int rs=sc.nextInt();
+        V.Volume(rs);
+        V.Volume();
+        System.out.println("Enter radius and height of cone ");
+        int rc=sc.nextInt();
+        int hc=sc.nextInt();
+        V.Volume(rc,hc);
+    }
+}
