@@ -1,0 +1,13 @@
+import java.util.*;
+public class Final_Variable {
+    final int x=10;
+    void display(){
+        x=20;
+    }
+    public static void main(String args []){
+       Final_Variable F=new Final_Variable();
+       F.display();
+    }
+}
+*ERROR* -cannot assign a value to final variable x
+	at Final_Variable.display
