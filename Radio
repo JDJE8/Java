@@ -1,0 +1,65 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Radio_Check_Eg extends JFrame implements ItemListener{
+    JPanel northpanel, southpanel;
+    JTextField jfield;
+    JCheckBox Java, OOPS, Python;
+    JRadioButton Theory, Practical;
+    ButtonGroup bg;
+    public Radio_Check_Eg(){
+        northpanel = new JPanel();
+        southpanel = new JPanel();
+        northpanel.setBackground(Color.pink);
+        southpanel.setBackground(Color.magenta);
+        
+        jfield = new JTextField(" Click and See ");
+        jfield.setBackground(Color.cyan);
+        
+        Java = new JCheckBox(" Java ");
+        OOPS = new JCheckBox(" OOPS ");
+        Python = new JCheckBox(" Python ");
+        Theory = new JRadioButton(" Theory ");
+        Practical = new JRadioButton(" Practical ",true);
+        
+        bg = new ButtonGroup();
+        bg.add(Theory);
+        bg.add(Practical);
+        
+        northpanel.add(Java);
+        northpanel.add(OOPS);
+        northpanel.add(Python);
+        southpanel.add(Theory);
+        southpanel.add(Practical);
+        
+        Java.addItemListener(this);
+        Python.addItemListener(this);
+        OOPS.addItemListener(this);
+        Theory.addItemListener(this);
+        Practical.addItemListener(this);
+        Container c = getContentPane();
+        
+        c.add(northpanel, BorderLayout.NORTH);
+        c.add(southpanel, BorderLayout.SOUTH);
+        c.add(jfield, BorderLayout.CENTER);
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void itemStateChanged(ItemEvent e){
+        String str = " ";
+        if(Theory.isSelected())
+            str = "You like Theory";
+        else if(Practical.isSelected())
+            str = "You like Practical";
+        
+        jfield.setText("Java: " +Java.isSelected() 
+                        +"  OOPS:  " +OOPS.isSelected() 
+                        +"  Python:  " +Python.isSelected() 
+                        +"  AND  " +str);
+    }
+    public static void main(String args[]){
+        JFrame f = new Radio_Check_Eg();
+        f.setSize(400, 200);
+        f.setVisible(true);
+    }
+}
