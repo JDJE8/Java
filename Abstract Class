@@ -1,0 +1,31 @@
+import java.util.*;
+abstract class Area_1{
+   abstract void area();
+}
+class Rect extends Area_1{
+    Scanner sc=new Scanner(System.in);
+    void area(){
+        System.out.println("Enter length and breadth of Rectangle ");
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        System.out.println("Area of Rectangle is "+(x*y));
+    }
+}
+class Tri extends Area_1{
+    Scanner sc=new Scanner(System.in);
+    void area(){
+        System.out.println("Enter base and height of Triangle ");
+        int b=sc.nextInt();
+        int h=sc.nextInt();
+        float r=(float)(0.5)*b*h;
+        System.out.println("Area of Triangle is "+r);
+    }
+}
+public class Abstract {
+    public static void main(String args[]){
+        Rect R=new Rect();
+        R.area();
+        Tri T=new Tri();
+        T.area();
+    }
+}
