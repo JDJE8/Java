@@ -1,0 +1,22 @@
+class My_exception extends Exception{    My_exception(String message){
+        super(message);
+    }
+}
+public class User_defined_Ex {
+    public static void main(String args[]){
+        int x = 5 , y = 1000;
+        try{
+            float z =(float)x / (float)y;
+            if(z < 0.01){
+                throw new My_exception("Number is too small");
+            }
+        }
+        catch (My_exception e){
+            System.out.println("Caught My Exception");
+            System.out.println(e.getMessage());
+        }
+        finally{
+            System.out.println("I am always Executed");
+        }
+    }
+}
