@@ -1,0 +1,19 @@
+import java.util.*;
+class Parameter{ 
+int x,y;
+    Parameter(int a,int b){
+        x=a;
+        y=b;
+    }
+    void display(){
+        System.out.println("I am Parameterized Constructor");
+        System.out.println("x= "+x);
+        System.out.println("y= "+y);
+    }
+}
+public class Para_con {
+    public static void main(String args[]){
+        Parameter p=new Parameter(10,20);
+        p.display();
+    }
+}
