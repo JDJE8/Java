@@ -1,0 +1,21 @@
+import java.util.*;
+class Default{
+int x,y;
+    Default(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter x and y");
+        x=sc.nextInt();
+        y=sc.nextInt();
+    }
+    void display(){
+        System.out.println("I am default Constructor");
+        System.out.println("x= "+x);
+        System.out.println("y= "+y);
+    }
+}
+public class Default_Con{
+    public static void main(String args[]){
+        Default d=new Default();
+        d.display();
+    }
+}
