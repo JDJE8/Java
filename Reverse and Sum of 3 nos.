@@ -1,0 +1,30 @@
+import java.util.*;
+public class Rev_Sum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter the second number: ");
+        int num2 = sc.nextInt();
+        System.out.print("Enter the third number: ");
+        int num3 = sc.nextInt();
+        int rev1 = reverse(num1);
+        int rev2 = reverse(num2);
+        int rev3 = reverse(num3);
+        int sum = num1 + num2 + num3;
+        System.out.println("Reverse of first number: " + rev1);
+        System.out.println("Reverse of second number: " + rev2);
+        System.out.println("Reverse of third number: " + rev3);
+        System.out.println("Sum of the numbers: " + sum);
+        sc.close();
+    }
+    public static int reverse(int num) {
+        int reversed = 0;
+        while (num != 0) {
+            int digit = num % 10;  
+            reversed = reversed * 10 + digit; 
+            num /= 10;  
+        }
+        return reversed;
+    }
+}
