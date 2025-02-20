@@ -1,0 +1,31 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class Key_Listener_Eg extends JFrame implements KeyListener{
+    JLabel L1, L2;
+    JTextField T1;
+    Key_Listener_Eg(){
+        setLayout(new FlowLayout());
+        L1 = new JLabel("Enter Character ");
+        L2 = new JLabel(" ", JLabel.CENTER);
+        add(L1);
+        T1 = new JTextField(20);
+        add(T1);
+        add(L2);
+        T1.addKeyListener(this);
+        setVisible(true);
+        setSize(500, 500);
+    }
+        public void keyPressed(KeyEvent e){
+            L2.setText("Key Down");
+        }
+        public void keyReleased(KeyEvent e){
+            L2.setText("Key Up");
+        }
+        public void keyTyped(KeyEvent e){
+            //L2.setText("Recently typed characters are "+e.getKeyChar());
+        }
+        public static void main(String args[]){
+            new Key_Listener_Eg();
+        }
+}
