@@ -1,0 +1,19 @@
+import java.util.*;
+class Square{
+    static int sq,n;
+    static void getdata(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number ");
+        n=sc.nextInt();
+    }
+    static void display(){
+        sq=n*n;
+        System.out.println("Square of the given number is "+sq);
+    }
+}
+public class Static_Method_1c {
+    public static void main(String args[]){
+        Square.getdata();
+        Square.display();
+    }
+}
