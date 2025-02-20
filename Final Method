@@ -1,0 +1,18 @@
+import java.util.*;
+class Base{
+    final void display(){
+        System.out.println("I am base");
+    }
+}
+class Derive extends Base{
+    void display(){
+        System.out.println("I am Derive");
+    }
+}
+public class Final_Method {
+    public static void main(String args[]){
+        Derive D=new Derive();
+        D.display();
+    }
+}
+*ERROR* -class Derive overrides final method display.()
