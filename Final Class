@@ -1,0 +1,19 @@
+import java.util.*;
+final class Base{
+    void display(){
+    System.out.println("I am Base");
+    }
+}
+class Derive extends Base{
+    void display(){
+        System.out.println("I am Derive");
+    }
+}
+public class Final_Class {
+    public static void main(String args[]){
+        Derive D=new Derive();
+        D.display();
+    }
+}
+*ERROR* -Uncompilable source code - Erroneous tree type: Derive
+	at Final_Class.main
