@@ -1,0 +1,18 @@
+Libraries
+Right click 
+Add jar file
+Mysql connector 
+Open
+Services 
+Database
+Driver 
+Right click 
+Connect
+Mysql (create table)
+Show databases;
+Create database xyz;
+Use xyz;
+Create table emp(empid int , name varchar(40), sal int);
+Insert into emp values(1,"xyz",60000);
+Test connection
+succeeded
