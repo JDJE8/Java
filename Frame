@@ -1,0 +1,16 @@
+import javax.swing.*;
+class Frame_Eg {
+    JFrame f;
+    Frame_Eg(){
+        f = new JFrame(" Frame Example ");
+        JButton B1 = new JButton(" Click Me ");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(B1);
+        f.setSize(500,500);
+        //f.setLayout(null);
+        f.setVisible(true);
+    }
+    public static void main(String args[]){
+        new Frame_Eg();
+    }
+}
