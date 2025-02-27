@@ -1,13 +1,18 @@
-import java.util.*;
-public class Fact {
-    public static void main(String args[]){
-        int f=1;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number ");
-        int n = sc.nextInt();
-        for(int i=1;i<=n;i++){
-            f=f*i;
-        }
-            System.out.println("Factorial is "+f);
-    }
+public class Factorial {
+   float fa=1,f;
+   void getdata(float a){
+       f=a;
+   }
+   float Factorial_res(){
+       for(int i=1;i<=f;i++){
+           fa=fa*i;
+       }
+       return fa;
+   }
+   public static void main(String args[]){
+       Factorial f = new Factorial();
+       f.getdata(7);
+       float fact = f.Factorial_res();
+       System.out.println("Factorial of 5 is "+fact);
+   }
 }
