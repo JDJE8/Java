@@ -1,0 +1,25 @@
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+class Color_Chooser_Eg extends JFrame implements ActionListener{
+    JButton B;
+    Container C;
+    Color_Chooser_Eg(){
+        C = getContentPane();
+        C.setLayout(new FlowLayout());
+        B = new JButton("COLOR");
+        B.addActionListener(this);
+        C.add(B);
+        setSize(500,500);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed(ActionEvent e){
+        Color initialcolor = Color.RED;
+        Color color = JColorChooser.showDialog(this,"Select color",initialcolor);
+        C.setBackground(color);
+    }
+    public static void main(String args[]){
+        new Color_Chooser_Eg();
+    }
+}
