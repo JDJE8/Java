@@ -1,0 +1,25 @@
+import java.awt.*;
+import java.sql.*;
+import javax.swing.*;
+public class JDBC_Eg {
+    static String url = "jdbc:mysql://localhost:3306/test";
+    static String user = "root";
+    static String pass = "vivek@12345";
+    public static void main(String args []){
+        Connection con;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, pass);
+                Statement s = con.createStatement();
+                ResultSet q = s.executeQuery("select * from emp");
+                while(q.next())
+                    System.out.println("EmpId: "+q.getInt(1)+" Name: "+q.getString(2)+" Salary: "+q.getInt(3));
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e.getMessage());
+        }
+        finally{
+            System.out.println("Done");
+        }
+    }
+}
