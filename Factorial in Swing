@@ -1,0 +1,34 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Factorial_Swing extends JFrame implements ActionListener{
+    JButton B1;
+    JLabel L1;
+    JTextField T1;
+    Factorial_Swing(){
+        setTitle(" Factorial "); 
+        setLayout(new FlowLayout());
+        B1 = new JButton(" Calculate ");
+        T1 = new JTextField(10);
+        L1 = new JLabel();
+        add(B1);
+        add(T1);
+        add(L1);
+        B1.addActionListener(this);
+        setSize(500,500);
+        setVisible(true);
+    }
+    public void actionPerformed(ActionEvent e){
+        String s = T1.getText();
+        int x = Integer.parseInt(s);
+        int f = 1;
+        for(int i=1; i<=x;i++){
+            f=f*i;
+        }
+        String ans = Integer.toString(f);
+        L1.setText(ans);
+    }
+    public static void main(String args[]){
+        new Factorial_Swing();
+    }
+}
