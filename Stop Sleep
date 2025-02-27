@@ -1,0 +1,43 @@
+class A extends Thread{
+    int i;
+    public void run(){
+        for(i=1;i<=5;i++){
+            if (i == 1)
+                yield();
+            System.out.println("From A = "+i);
+        }
+    }
+}
+class B extends Thread{
+    int j;
+    public void run(){
+        for(j=0;j<=5;j++){
+            System.out.println("From B = "+j);
+            if(j == 3)
+                stop();
+        }
+    }
+}
+class C extends Thread{
+    int k;
+    public void run(){
+        for(k=0;k<=5;k++){
+            System.out.println("From C = "+k);
+            if(k == 1)
+                try{
+                    sleep (1000);
+                }
+            catch(Exception e){  }
+        }
+    }
+}
+public class Block_statements {
+    public static void main(String args[]){
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        a.start();
+        b.start();
+        c.start();
+    }
+}
