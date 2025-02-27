@@ -1,0 +1,26 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+
+class Mouse_Demo extends MouseAdapter{
+    JFrame F;
+    Mouse_Demo(){
+        F = new JFrame("Mouse Adapter");
+        F.addMouseMotionListener(this);
+        F.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        F.setSize(500,500);
+        F.setLayout(null);
+        F.setVisible(true);
+    }
+    public void mouseMoved(MouseEvent e){
+        Random R = new Random();
+        Graphics G = F.getGraphics();
+        Color C = new Color(R.nextInt(255),R.nextInt(255),R.nextInt(255));
+        G.setColor(C);
+        G.fillOval(e.getX(), e.getY(), 20, 20);
+    }
+    public static void main(String args[]){
+        new Mouse_Demo();
+    }
+}
