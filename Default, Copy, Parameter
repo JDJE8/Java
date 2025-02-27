@@ -1,0 +1,37 @@
+import java.util.*;
+class Emp{
+    int empid;
+    String ename;
+    Emp(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Employee ID ");
+        empid=sc.nextInt();
+        System.out.println("Enter Employee Name ");
+        ename=sc.next();
+    }
+    Emp(int id,String name){
+        empid=id;
+        ename=name;
+    }
+    Emp(Emp e){
+        empid=e.empid;
+        ename=e.ename;
+    }
+    void display(){
+        System.out.println("Employee ID = "+empid);
+        System.out.println("Employee Name = "+ename);
+    }
+}
+public class Employee {
+    public static void main(String args[]){
+        Emp E=new Emp();
+        System.out.println("Default Constructor");
+        E.display();
+        Emp E1=new Emp(E);
+        System.out.println("Copy Constructor");
+        E1.display();
+        Emp E2=new Emp(4,"Jemi");
+        System.out.println("Parameterized Constructor");
+        E2.display();
+    }
+}
