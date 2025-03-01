@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Volume {
+class Shapes {
     int R, H, Cylinder, Sphere, Cone;
     float pi = 3.14f;
     Scanner sc = new Scanner(System.in);
@@ -28,7 +28,7 @@ class Volume {
 public class Method_Over {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        Volume V = new Volume();
+        Shapes V = new Shapes(); // Corrected line: Using Shapes class
         System.out.println("Enter radius of Sphere ");
         int rs = sc.nextInt();
         V.Volume(rs);
